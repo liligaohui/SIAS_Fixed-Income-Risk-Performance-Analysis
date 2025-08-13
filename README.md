@@ -88,7 +88,7 @@ By simply pointing to the latest holdings files, you can reproduce key rate expo
 ## Notebooks & Colab
 
 Interactive implementation available on Google Colab:
-[Open in Colab »](https://colab.research.google.com/) *(link to your live notebook)*
+[Open in Colab »](https://colab.research.google.com/drive/1wOz3mYphzrIWeIp3SdGKsVa1yM6HPdO9?usp=sharing) 
 
 ## Contributing
 
