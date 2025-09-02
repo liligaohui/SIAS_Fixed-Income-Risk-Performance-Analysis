@@ -38,6 +38,12 @@ By pointing to the latest holdings files, you can reproduce key rate exposures, 
   * Easily extend with new scenarios, benchmarks, or custom classifications.
 
 
+## Notebooks & Colab
+
+Interactive implementation available on Google Colab:
+[**Open in Colab »**](https://colab.research.google.com/drive/1wOz3mYphzrIWeIp3SdGKsVa1yM6HPdO9?usp=sharing)
+
+
 ## Prerequisites
 
 1. **Python 3.8+**
@@ -105,13 +111,6 @@ Note: Without this dataset, the analysis code will run but produce empty outputs
 2. All figures are in CAD.
 3. Scenario analysis assumes portfolio weights remain constant during the simulation period.
 4. Convexity effects are excluded from scenario analysis.
-
-
-## Notebooks & Colab
-
-Interactive implementation available on Google Colab:
-[**Open in Colab »**](https://colab.research.google.com/drive/1wOz3mYphzrIWeIp3SdGKsVa1yM6HPdO9?usp=sharing)
-
 
 
 ## Author & Contact
