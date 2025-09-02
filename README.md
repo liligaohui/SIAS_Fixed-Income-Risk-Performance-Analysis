@@ -116,12 +116,10 @@ Interactive implementation available on Google Colab:
 
 ## Author & Contact
 
-**Lili Hui Gao**
-Risk & Compliance Portfolio Manager
-Student Investment Advisory Service (SIAS) – SFU
-2024 Cohort
+**Lili Gao**\
+Risk & Compliance Portfolio Manager\
+Student Investment Advisory Service (SIAS) – SFU\
+2024 Cohort\
 ✉️ [hga87@sfu.ca](mailto:hga87@sfu.ca)
 
 *Last updated: Sep 1, 2025*
-
-Do you want me to also make a shorter version of this (like an executive summary style) for GitHub’s main page, and keep the detailed one in a `docs/` folder?
