@@ -1,34 +1,42 @@
-# SIAS Fixed Income Risk Monitoring
+# SIAS Fixed Income Risk & Performance Monitoring
 
 ## Overview
 
-This repository contains a Python-based toolkit for monitoring and analyzing the **SIAS Fixed Income Portfolio** and its benchmark—without requiring direct Bloomberg access.
+This repository provides a Python-based toolkit for monitoring and analyzing the **SIAS Fixed Income Portfolio** and its benchmark—without requiring direct Bloomberg access.
+
 It enables the SIAS Risk Team to quantify active duration positioning, sector allocation differences, and scenario-driven performance impacts through a fully interactive stress-testing dashboard.
 
-By simply pointing to the latest holdings files, you can reproduce key rate exposures, government/corporate allocation differences, and yield-curve shock impacts for both the SIAS portfolio and its benchmark (FTSE Canada Universe Bond Index, ticker: XBB).
+By pointing to the latest holdings files, you can reproduce key rate exposures, government/corporate allocation differences, and yield-curve shock impacts for both the SIAS portfolio and its benchmark: **FTSE Canada Universe Bond Index (iShares XBB)** ([Web Page](https://www.blackrock.com/ca/investors/en/products/239493/ishares-canadian-universe-bond-index-etf)).
+
 
 ## Features
 
-* **Comprehensive Fixed Income Analytics:**
+* **Comprehensive Fixed Income Analytics**
 
-  * Macaulay & Modified Duration, convexity, active duration by maturity bucket, and active sector allocation (Gov/Province/Corporate).
-* **Sector & Maturity Breakdown:**
+  * Macaulay & Modified Duration, convexity, active duration by maturity bucket, and active sector allocation (Federal/Provincial/Corporate).
 
-  * Government vs Corporate exposure, duration-weight distribution by bucket, and bond-type mix.
-* **Interactive Stress-Testing Dashboard:**
+* **Sector & Maturity Breakdown**
 
-  * **Parallel Shifts:** Apply basis point shocks to the entire curve.
+  * Federal vs. Corporate exposure, duration-weight distribution by bucket, and bond-type mix.
+
+* **Interactive Stress-Testing Dashboard**
+
+  * **Parallel Shifts:** Apply basis-point shocks across the curve.
   * **Curve Steepener/Flattener:** Adjust short- and long-end independently.
   * **Key-Rate Shocks:** Bump selected maturity buckets (2y, 5y, 10y, 30y).
-* **Automated Data Ingestion:**
+
+* **Automated Data Ingestion**
 
   * Reads portfolio holdings from BNY Mellon exports and benchmark holdings from XBB constituent files.
-* **Dynamic Visualization:**
+
+* **Dynamic Visualization**
 
   * Real-time updates in Jupyter/Colab with IPython widgets for parameter tuning.
-* **Modular & Extensible:**
 
-  * Easy to integrate new scenarios, benchmarks, or custom classifications.
+* **Modular & Extensible**
+
+  * Easily extend with new scenarios, benchmarks, or custom classifications.
+
 
 ## Prerequisites
 
@@ -48,13 +56,23 @@ By simply pointing to the latest holdings files, you can reproduce key rate expo
 
 1. **SIAS Fixed Income Portfolio Holdings**
 
-   * File format: `.xlsx`
-   * Source: BNY Mellon (latest file, retrieved via SFU email)
+   * Format: `.xlsx`
+   * Source: BNY Mellon (retrieved via SFU email)
 
 2. **Benchmark Holdings (XBB)**
 
-   * File format: `.xlsx` or `.csv`
+   * Format: `.xlsx` or `.csv`
    * Source: FTSE Canada Universe Bond Index / iShares XBB constituent file
+
+### Data Access
+The dataset used in this project is not publicly available in this repository.  
+A copy is hosted on Google Drive. To obtain access:
+
+1. Visit the [Dataset Request Link](https://drive.google.com/drive/folders/1quHwjtSB1DkfSWaD2bA1_XT-s8HOqZkx?usp=sharing).  
+2. Submit an access request using your Google account.  
+3. Access will be granted on a case-by-case basis for academic and research purposes.  
+
+Note: Without this dataset, the analysis code will run but produce empty outputs or require substitution with your own data.
 
 ## Usage
 
@@ -65,45 +83,45 @@ By simply pointing to the latest holdings files, you can reproduce key rate expo
 3. **Configure** file paths at the top of the script:
 
    ```python
-   PORT_FILE = "SIAS_FI_Portfolio_dd-mm-yyyy.xlsx"
-   BM_FILE   = "XBB_holdings_dd-mm-yyyy.csv"
+   PORT_FILE = "yyyymmdd SIAS_FI_Portfolio_mm dd yyyy.xlsx"
+   BM_FILE   = "XBB_holdings_m dd yyyy.csv"
    ```
 
-4. **Run** the notebook or script:
+4. **Run** the notebook or script to:
 
-   * Loads and aligns portfolio vs. benchmark holdings.
-   * Displays portfolio & benchmark tables, active weights, maturity bucket durations, and sector allocation.
-   * Launches interactive stress-testing dashboard.
+   * Load and align portfolio vs. benchmark holdings.
+   * Display portfolio & benchmark tables, active weights, maturity bucket durations, and sector allocations.
+   * Launch the interactive stress-testing dashboard.
 
-5. **Export** results (optional):
-
-   * CSV: `outputs/fixed_income_metrics_<date>.csv`
-   * PNG charts: `outputs/<chart_name>_<date>.png`
 
 ## Verification & Quality Control
 
-* **Cross-Check:** Compare active duration and sector allocation against Bloomberg or other validated risk systems.
+* **Cross-Check:** Validate active duration and sector allocation against Bloomberg or other risk systems.
 * **Versioning:** Tag scripts and data files with a date stamp (e.g., `2025-08-08`) to ensure reproducibility.
+
+### Assumptions
+
+1. No look-through applied to underlying funds.
+2. All figures are in CAD.
+3. Scenario analysis assumes portfolio weights remain constant during the simulation period.
+4. Convexity effects are excluded from scenario analysis.
+
 
 ## Notebooks & Colab
 
 Interactive implementation available on Google Colab:
-[Open in Colab »](https://colab.research.google.com/drive/1wOz3mYphzrIWeIp3SdGKsVa1yM6HPdO9?usp=sharing) 
+[**Open in Colab »**](https://colab.research.google.com/drive/1wOz3mYphzrIWeIp3SdGKsVa1yM6HPdO9?usp=sharing)
 
-## Contributing
 
-Pull requests and issues are welcome for:
-
-* New stress-testing scenarios
-* Enhanced allocation visualizations
-* Additional benchmark support
 
 ## Author & Contact
 
-**Lili, Hui Gao**
-Risk and Compliance Portfolio Manager\
-Student Investment Advisory Service (SIAS) — SFU\
-2024 Cohort\
+**Lili Hui Gao**
+Risk & Compliance Portfolio Manager
+Student Investment Advisory Service (SIAS) – SFU
+2024 Cohort
 ✉️ [hga87@sfu.ca](mailto:hga87@sfu.ca)
 
-*Last Updated: Aug 8, 2025*
+*Last updated: Sep 1, 2025*
+
+Do you want me to also make a shorter version of this (like an executive summary style) for GitHub’s main page, and keep the detailed one in a `docs/` folder?
